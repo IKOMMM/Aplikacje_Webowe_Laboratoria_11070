@@ -5,3 +5,6 @@ ZAŁOŻENIE PROJEKU
 3. ❌ Możliwość jednoczesnego odtworzenia jednego lub wybranych/wszystkich kanałów 
 4. ❌ Przyjazna forma graficzna 
 */
+
+Komponent Audio() - js. Warto przejżeć i spróbować.
+clap.currentTime = 0; - ustawia czas ścieżki na zero, by po clap.play() dźwięk oddtwarzał sie za każdym kliknięciem.

@@ -1,8 +1,9 @@
 var channel01 = [];
 var clapAudio = document.querySelector('[data-sound="clap"]');
-var playChannel01 = document.querySelector('#playChannel01');
+var recordChannel01Btn = document.querySelector('#recordChannel01');
+var playChannel01Btn = document.querySelector('#playChannel01B');
 document.body.addEventListener('keypress', onKeyDown);
-playChannel01.addEventListener('click', onPlayChannel01);
+playChannel01Btn.addEventListener('click', onPlayChannel01);
 function onKeyDown(ev) {
     var key = ev.key;
     var time = ev.timeStamp;
@@ -14,8 +15,15 @@ function onKeyDown(ev) {
     console.log(channel01);
 }
 function playSound(key) {
-    clapAudio.currentTime = 0;
-    clapAudio.play();
+    switch (key) {
+        case 'w':
+            clapAudio.currentTime = 0;
+            clapAudio.play();
+            break;
+        default:
+            console.log("There Is No Sound To This Button");
+            break;
+    }
 }
 function onPlayChannel01() {
     playChannel01();
