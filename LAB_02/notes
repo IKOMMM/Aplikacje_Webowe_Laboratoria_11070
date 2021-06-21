@@ -8,3 +8,6 @@ ZAŁOŻENIE PROJEKU
 
 Komponent Audio() - js. Warto przejżeć i spróbować.
 clap.currentTime = 0; - ustawia czas ścieżki na zero, by po clap.play() dźwięk oddtwarzał sie za każdym kliknięciem.
+tsc -- watch app.ts - watch mode, kompiluje prosto i szybko automatycznie
+
+odliczanie dźwięków od timestamp

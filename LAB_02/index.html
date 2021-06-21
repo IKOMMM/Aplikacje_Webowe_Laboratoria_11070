@@ -7,102 +7,97 @@
     <title>LAB_02_DrumKit_11070</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>  
-    
-        <div class="album py-5">
-          <div class="container">
-            <h1>Drum Kit:</h1>        
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              <div class="col">
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h3 class="card-title"> Sounds:</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Q</b> - Clap 
-                          <audio src="sounds/clap.wav" type="button" class="btn btn-secondary" data-sound="clap" ></audio>                  
-                        </li>
-                        <li class="list-group-item"><b>W</b> - Boom   
-                          <audio src="sounds/boom.wav" type="button" class="btn btn-secondary" data-sound="boom"></audio>                
-                        </li>
-                        <li class="list-group-item"><b>E</b> - HitHat 
-                          <audio src="sounds/hihat.wav" type="button" class="btn btn-secondary" data-sound="hithat"></audio>
-                        </li>
-                        <li class="list-group-item"><b>R</b> - Kick 
-                          <audio src="sounds/kick.wav" type="button" class="btn btn-secondary" data-sound="kick"></audio>
-                        </li>
-                    </ul>                 
-                  </div>
-                </div>
+<body>   
+  <div class="container">
+    <br></b><h1>Drum Kit:</h1>  
+    <div class="row">
+      <div class="col">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="img/drum.png" class="card-img" alt="drumpic">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title"> Sounds:</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Q</b> - Clap 
+                      <audio src="sounds/clap.wav" type="button" class="btn btn-secondary" data-sound="clap" ></audio>                  
+                    </li>
+                    <li class="list-group-item"><b>W</b> - Boom   
+                      <audio src="sounds/boom.wav" type="button" class="btn btn-secondary" data-sound="boom"></audio>                
+                    </li>
+                    <li class="list-group-item"><b>E</b> - HitHat 
+                      <audio src="sounds/hihat.wav" type="button" class="btn btn-secondary" data-sound="hithat"></audio>
+                    </li>
+                    <li class="list-group-item"><b>R</b> - Kick 
+                      <audio src="sounds/kick.wav" type="button" class="btn btn-secondary" data-sound="kick"></audio>
+                    </li>
+                    <li class="list-group-item"><b>A</b> - Openhat 
+                      <audio src="sounds/openhat.wav" type="button" class="btn btn-secondary" data-sound="openhat"></audio>                  
+                    </li>
+                    <li class="list-group-item"><b>S</b> - Ride 
+                      <audio src="sounds/ride.wav" type="button" class="btn btn-secondary" data-sound="ride"></audio>                
+                    </li>
+                    <li class="list-group-item"><b>D</b> - Snare 
+                      <audio src="sounds/snare.wav" type="button" class="btn btn-secondary" data-sound="snare"></audio>
+                    </li>
+                    <li class="list-group-item"><b>F</b> - Tink
+                      <audio src="sounds/tink.wav" type="button" class="btn btn-secondary" data-sound="tink"></audio>
+                    </li> 
+                </ul>                 
               </div>
-              
-              <div class="col">
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h3 class="card-title"> Sounds:</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>A</b> - Openhat 
-                          <audio src="sounds/openhat.wav" type="button" class="btn btn-secondary" data-sound="openhat" ></audio>                  
-                        </li>
-                        <li class="list-group-item"><b>S</b> - Ride 
-                          <audio src="sounds/ride.wav" type="button" class="btn btn-secondary" data-sound="ride"></audio>                
-                        </li>
-                        <li class="list-group-item"><b>D</b> - Snare 
-                          <audio src="sounds/snare.wav" type="button" class="btn btn-secondary" data-sound="snare"></audio>
-                        </li>
-                        <li class="list-group-item"><b>F</b> - Tink
-                          <audio src="sounds/tink.wav" type="button" class="btn btn-secondary" data-sound="tink"></audio>
-                        </li>                         
-                    </ul>                                  
-                  </div>                  
-                </div>               
-             </div>
-              
-             <div class="col">
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h3 class="card-title"> Record:</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <b>Channel 01: </b>
-                            <button id="recordChannel01" type="button" class="btn btn-danger btn-sm">
-                                Record
-                            </button>
-                            <button id="playChannel01" type="button" class="btn btn-success btn-sm">
-                                Play
-                            </button>             
-                        </li>
-                        <li class="list-group-item">
-                            <b>Channel 02: </b>
-                            <button id="recordChannel02" type="button" class="btn btn-danger btn-sm">
-                                Record
-                            </button>
-                            <button id="playChannel02" type="button" class="btn btn-success btn-sm">
-                                Play
-                            </button>             
-                        </li>
-                        <li class="list-group-item">
-                            <b>Channel 03: </b>
-                            <button id="recordChannel03" type="button" class="btn btn-danger btn-sm">
-                                Record
-                            </button>
-                            <button id="playChannel03" type="button" class="btn btn-success btn-sm">
-                                Play
-                            </button>             
-                        </li>
-                        <li class="list-group-item">
-                            <b>Channel 04: </b>
-                            <button id="recordChannel04" type="button" class="btn btn-danger btn-sm">
-                                Record
-                            </button>
-                            <button id="playChannel04" type="button" class="btn btn-success btn-sm">
-                                Play
-                            </button>             
-                        </li>
-                    </ul>                 
-                  </div>
-                </div>
-             </div>
-        </div>
+            </div>
+          </div>
+        </div><br>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title"> Record:</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <b>Channel 01: </b>
+                    <button id="recordChannel01" type="button" class="btn btn-danger btn" data-toggle="tooltip" data-placement="top" title="Press to record sound!">
+                        Record
+                    </button>
+                    <button id="playChannel01" type="button" class="btn btn-success btn" data-toggle="tooltip" data-placement="top" title="Press to play sound!">
+                        Play
+                    </button>             
+                </li>
+                <li class="list-group-item">
+                    <b>Channel 02: </b>
+                    <button id="recordChannel02" type="button" class="btn btn-danger btn" data-toggle="tooltip" data-placement="top" title="Press to record sound!">
+                        Record
+                    </button>
+                    <button id="playChannel02" type="button" class="btn btn-success btn" data-toggle="tooltip" data-placement="top" title="Press to play sound!">
+                        Play
+                    </button>             
+                </li>
+                <li class="list-group-item">
+                    <b>Channel 03: </b>
+                    <button id="recordChannel03" type="button" class="btn btn-danger btn" data-toggle="tooltip" data-placement="top" title="Press to record sound!">
+                        Record
+                    </button>
+                    <button id="playChannel03" type="button" class="btn btn-success btn" data-toggle="tooltip" data-placement="top" title="Press to play sound!">
+                        Play
+                    </button>             
+                </li>
+                <li class="list-group-item">
+                    <b>Channel 04: </b>
+                    <button id="recordChannel04" type="button" class="btn btn-danger btn" data-toggle="tooltip" data-placement="top" title="Press to record sound!">
+                        Record
+                    </button>
+                    <button id="playChannel04" type="button" class="btn btn-success btn" data-toggle="tooltip" data-placement="top" title="Press to play sound!">
+                        Play
+                    </button>             
+                </li>
+            </ul>                 
+          </div>
+        </div><br>
+      </div>
+    </div> 
+
     </div>
 
     <script src="app.js"></script>
