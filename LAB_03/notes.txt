@@ -1,0 +1,3 @@
+fetch - by podpiąć się pod zewnętrze API, zwraca typ object promise
+object promise 
+zapis w przeglądarce - lepiej w local storage jak w cookies
