@@ -1,11 +1,13 @@
-    const apiKey = '50d53005c0fd5f556bb4ef15224c4209';     
-    const form : HTMLFormElement = document.querySelector(".top-banner form");
-    const input : HTMLInputElement = document.querySelector(".top-banner input");
-    const msg : HTMLBodyElement = document.querySelector(".top-banner .msg");
-    const list : HTMLBodyElement = document.querySelector(".ajax-section .cities");
+    const apiKey = '50d53005c0fd5f556bb4ef15224c4209';
+    const form = document.querySelector(".top-banner form");
+    const input = document.querySelector(".top-banner input");
+    const msg = document.querySelector(".top-banner .msg");
+    const list = document.querySelector(".ajax-section .cities");    
 
-export class App {          
 
+export class App {     
+    
+    
     
     /*
     constructor() {
