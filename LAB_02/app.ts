@@ -4,7 +4,7 @@ const channel02: any[] = [];
 const channel03: any[] = [];
 const channel04: any[] = [];
 
-//Body -odwołanie
+//Body - odwołanie
 let bodyTime: HTMLBodyElement = document.querySelector('.body');
 const recordStart = null;
 
@@ -59,7 +59,7 @@ function playAudio(key: string){
 
         case 'q':
         clapAudio.currentTime = 0;//Wyzerowanie audio
-        clapAudio.play(); //Play - funkcja dla HTMLAudioElement
+        clapAudio.play();//Play - funkcja dla HTMLAudioElement
         console.log("Q - pressed");
         break;
         
@@ -122,12 +122,11 @@ function onPlayChannel01(): void{
     playChannel01();
 }
 
-//Foreach z Timeoutem, by nie puszczać audio w jednej chwili. PrevTime doobliczania różnicy w czasie.
+//Foreach z Timeoutem, by nie puszczać audio w jednej chwili. PrevTime do obliczania różnicy w czasie.
 function playChannel01(): void{    
     let prevTime = 0; 
     
-    //gdzieś tu czas record na 0 i różnica timeout  od 0
-
+    //gdzieś tu czas record na 0 i różnica timeout od 0
     channel01.forEach(sound => {
         const timeout = sound.time - prevTime;
         setTimeout(()=> playAudio(sound.key), timeout);        
