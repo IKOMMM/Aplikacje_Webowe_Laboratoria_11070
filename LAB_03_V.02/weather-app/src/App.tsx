@@ -16,7 +16,7 @@ function App() {
       <h1>Weather App</h1>
       <div>
         <label>
-          Add Location
+          Add Location           
           <input className="ml-1 mr-1" type="text" value={locationSearch}
                  onChange={e => setLocationSearch(e.target.value)}/>
         </label>
