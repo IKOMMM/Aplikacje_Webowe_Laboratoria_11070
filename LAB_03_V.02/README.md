@@ -1,4 +1,4 @@
-# Project ceated with (instil.co)(https://instil.co/blog/react-typescript-weather-app-tutorial-part-1/) with my extension.
+# Project ceated with [instil.co](https://instil.co/blog/react-typescript-weather-app-tutorial-part-1/) with my extension.
 
 # Getting Started with Create React App
 
