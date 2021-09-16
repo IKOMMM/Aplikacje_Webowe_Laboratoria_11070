@@ -6,9 +6,7 @@ Na podstawie https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app
 
 
 export class App {
-    opwApiKey = '50d53005c0fd5f556bb4ef15224c4209';  
-
-    
+    opwApiKey = '50d53005c0fd5f556bb4ef15224c4209';      
 
     constructor() {
         this.getCityInfo('zakopane')
