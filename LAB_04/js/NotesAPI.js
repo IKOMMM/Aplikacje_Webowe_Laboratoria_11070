@@ -1,28 +1,29 @@
 export default class NotesAPI {
     static getAllNotes() {
-        const notes = JSON.parse(localStorage.getItem("notesapp-notes") || "[]");
+        const notes = JSON.parse(localStorage.getItem("notesapp-notes") || "[]");//Odwołanie do localstorage, jeżeli nie ma notatki, daje nam pusty element tablicy
 
         return notes.sort((a, b) => {
             return new Date(a.updated) > new Date(b.updated) ? -1 : 1;
-        });
+        }); //Sortowanie notatek po zaktualizwoantm timestampie
     }
+    
 
     static saveNote(noteToSave) {
         const notes = NotesAPI.getAllNotes();
-        const existing = notes.find(note => note.id == noteToSave.id);
+        const existing = notes.find(note => note.id == noteToSave.id);//Sprawdza, czy jest jest już notatka o danym ID i wrzuca ją do existing
 
-        // Edit/Update
+        // Segment Edit/Update 
         if (existing) {
             existing.title = noteToSave.title;
             existing.body = noteToSave.body;
             existing.updated = new Date().toISOString();
         } else {
             noteToSave.id = Math.floor(Math.random() * 1000000);
-            noteToSave.updated = new Date().toISOString();
+            noteToSave.updated = new Date().toISOString();//Time stamp
             notes.push(noteToSave);
         }
 
-        localStorage.setItem("notesapp-notes", JSON.stringify(notes));
+        localStorage.setItem("notesapp-notes", JSON.stringify(notes));// Napdisuje wejście do localstorage
     }
 
     static deleteNote(id) {
