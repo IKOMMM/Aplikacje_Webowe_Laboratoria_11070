@@ -3,7 +3,7 @@ var channel01 = [];
 var channel02 = [];
 var channel03 = [];
 var channel04 = [];
-//Body -odwołanie
+//Body - odwołanie
 var bodyTime = document.querySelector('.body');
 var recordStart = null;
 //Audio Elementy - odwołanie
@@ -17,10 +17,13 @@ var snareAudio = document.querySelector('[data-sound="snare"]');
 var tinkAudio = document.querySelector('[data-sound="tink"]');
 var recordChannel01Btn = document.querySelector('#recordChannel01');
 var playChannel01Btn = document.querySelector('#playChannel01');
+var recordChannel02Btn = document.querySelector('#recordChannel02');
+var playChannel02Btn = document.querySelector('#playChannel02');
 document.body.addEventListener('keypress', onKeyDown);
 recordChannel01Btn.addEventListener('click', recordChannel01);
 playChannel01Btn.addEventListener('click', onPlayChannel01);
 var isChannel01OnRecord = false;
+var isChannel02OnRecord = false;
 function onKeyDown(ev) {
     var key = ev.key;
     var time = ev.timeStamp;
@@ -38,6 +41,21 @@ function onKeyDown(ev) {
             });
         }
         console.log(channel01);
+    }
+    if (isChannel02OnRecord) {
+        if (channel02.length < 1) {
+            channel02.push({
+                key: key,
+                time: 0
+            });
+        }
+        else {
+            channel02.push({
+                key: key,
+                time: time
+            });
+        }
+        console.log(channel02);
     }
     playAudio(key);
     console.log(channel01);
@@ -97,10 +115,26 @@ function onPlayChannel01() {
     isChannel01OnRecord = false;
     playChannel01();
 }
-//Foreach z Timeoutem, by nie puszczać audio w jednej chwili. PrevTime doobliczania różnicy w czasie.
+//Foreach z Timeoutem, by nie puszczać audio w jednej chwili. PrevTime do obliczania różnicy w czasie.
+function playChannel02() {
+    var prevTime = 0;
+    //gdzieś tu czas record na 0 i różnica timeout od 0
+    channel01.forEach(function (sound) {
+        var timeout = sound.time - prevTime;
+        setTimeout(function () { return playAudio(sound.key); }, timeout);
+    });
+}
+//POWRÓRKA DO ZMIANT W KLASY - nagrywanie drugiego kanału ten sam kod co pierwszego.
+function recordChannel02() {
+    isChannel01OnRecord = true;
+}
+function onPlayChannel02() {
+    console.log('Play Channel02');
+    isChannel01OnRecord = false;
+    playChannel01();
+}
 function playChannel01() {
     var prevTime = 0;
-    //gdzieś tu czas record na 0 i różnica timeout  od 0
     channel01.forEach(function (sound) {
         var timeout = sound.time - prevTime;
         setTimeout(function () { return playAudio(sound.key); }, timeout);

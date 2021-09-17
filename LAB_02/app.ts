@@ -20,11 +20,14 @@ const tinkAudio: HTMLAudioElement = document.querySelector('[data-sound="tink"]'
 
 const recordChannel01Btn: HTMLButtonElement = document.querySelector('#recordChannel01');
 const playChannel01Btn: HTMLButtonElement = document.querySelector('#playChannel01');
+const recordChannel02Btn: HTMLButtonElement = document.querySelector('#recordChannel02');
+const playChannel02Btn: HTMLButtonElement = document.querySelector('#playChannel02');
 
 document.body.addEventListener('keypress', onKeyDown);
 recordChannel01Btn.addEventListener('click', recordChannel01);
 playChannel01Btn.addEventListener('click', onPlayChannel01);
 let isChannel01OnRecord:boolean = false;
+let isChannel02OnRecord:boolean = false;
 
 function onKeyDown(ev: KeyboardEvent): void {
 
@@ -48,6 +51,24 @@ function onKeyDown(ev: KeyboardEvent): void {
         }
         console.log(channel01);
     }  
+
+    if(isChannel02OnRecord){ 
+
+        if(channel02.length<1){
+            channel02.push({
+                key: key,
+                time: 0                
+            });
+        }
+        else{
+            channel02.push({
+                key: key,
+                time: time                
+            });
+            
+        }
+        console.log(channel02);
+    } 
     
     playAudio(key);
     console.log(channel01);
@@ -115,7 +136,6 @@ function recordChannel01() : void{
     isChannel01OnRecord = true;
 }
 
-
 function onPlayChannel01(): void{
     console.log('Play Channel01'); 
     isChannel01OnRecord = false;
@@ -123,10 +143,31 @@ function onPlayChannel01(): void{
 }
 
 //Foreach z Timeoutem, by nie puszczać audio w jednej chwili. PrevTime do obliczania różnicy w czasie.
-function playChannel01(): void{    
+function playChannel02(): void{    
     let prevTime = 0; 
     
     //gdzieś tu czas record na 0 i różnica timeout od 0
+    channel01.forEach(sound => {
+        const timeout = sound.time - prevTime;
+        setTimeout(()=> playAudio(sound.key), timeout);        
+    }); 
+}
+
+//POWRÓRKA DO ZMIANT W KLASY - nagrywanie drugiego kanału ten sam kod co pierwszego.
+function recordChannel02() : void{    
+    isChannel01OnRecord = true;
+}
+
+function onPlayChannel02(): void{
+    console.log('Play Channel02'); 
+    isChannel01OnRecord = false;
+    playChannel01();
+}
+
+
+function playChannel01(): void{    
+    let prevTime = 0; 
+    
     channel01.forEach(sound => {
         const timeout = sound.time - prevTime;
         setTimeout(()=> playAudio(sound.key), timeout);        
