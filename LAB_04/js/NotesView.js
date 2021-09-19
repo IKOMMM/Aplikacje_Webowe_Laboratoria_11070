@@ -57,7 +57,7 @@ export default class NotesView {
     updateNoteList(notes) {
         const notesListContainer = this.root.querySelector(".notes__list");
 
-        // Empty list
+        // Pusta Lista
         notesListContainer.innerHTML = "";
 
         for (const note of notes) {
@@ -66,7 +66,7 @@ export default class NotesView {
             notesListContainer.insertAdjacentHTML("beforeend", html);
         }
 
-        // Add select/delete events for each list item
+        // Dodaj, wybierz lub usuń eventy z każego elementu listy
         notesListContainer.querySelectorAll(".notes__list-item").forEach(noteListItem => {
             noteListItem.addEventListener("click", () => {
                 this.onNoteSelect(noteListItem.dataset.noteId);
